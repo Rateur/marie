@@ -1,0 +1,70 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    animation: popupScale 0.3s ease;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .modal-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .modal-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Couleurs personnalisées */
+  .modal[data-type="formation"] .modal-content { background-color: #C4F9F4; }
+  .modal[data-type="syntheses"] .modal-content { background-color: #42A7C7; }
+  .modal[data-type="capture"]   .modal-content { background-color: #DB7A57; }
+  .modal[data-type="visuels"]   .modal-content { background-color: #C5ECDA; }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+  
+  @keyframes popupScale {
+    from { transform: scale(0.9); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+  }
+  

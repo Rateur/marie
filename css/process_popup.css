@@ -1,0 +1,43 @@
+
+.popup-image-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .popup-image-modal.active {
+    display: flex;
+  }
+  
+  .popup-image-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 1rem;
+  }
+  
+  .popup-image-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .popup-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: #fff;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+  

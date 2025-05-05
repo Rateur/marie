@@ -1,0 +1,83 @@
+#services {
+    position: relative;
+    padding: 5rem 2rem;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .services-background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url('../assets/bg-services.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    display: none;
+  }
+  
+  @media (min-width: 769px) {
+    .services-background {
+      display: block;
+    }
+  }
+  
+  
+  .services-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #0F4287;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .service-card {
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .service-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Couleurs spécifiques */
+  .service-card[data-service="formation"] {
+    background-color: #C4F9F4;
+  }
+  .service-card[data-service="syntheses"] {
+    background-color: #42A7C7;
+  }
+  .service-card[data-service="capture"] {
+    background-color: #DB7A57;
+  }
+  .service-card[data-service="visuels"] {
+    background-color: #C5ECDA;
+  }
+  
+  /* Responsive mobile */
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+  
