@@ -1,0 +1,71 @@
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background-image: url('../assets/texture-de-papier-blanc.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-logo {
+    flex-shrink: 0;
+  }
+  
+  .nav-logo img {
+    height: clamp(30px, 5vw, 48px);
+    width: auto;
+    display: block;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav a {
+    font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
+    font-size: 1.1rem;
+    color: #000;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(33, 217, 238, 0.65);
+    transition: color 0.2s ease;
+  }
+  
+  nav a:hover {
+    color: #0077b6;
+  }
+  
+  /* Responsive - optionnel : navigation en colonne sur petit écran */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: row; /* reste en ligne */
+      flex-wrap: wrap;     /* au cas où ça déborde */
+      justify-content: space-between;
+    }
+  
+    nav ul {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+  
+    .nav-logo img {
+      height: clamp(25px, 6vw, 35px); /* un poil plus petit en mobile */
+    }
+  }
+  

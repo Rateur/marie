@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marie — Facilitation graphique</title>
+
+  <!-- Base CSS globale -->
+  <link rel="stylesheet" href="css/base.css" />
+
+  <!-- CSS par section -->
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/a-propos.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="stylesheet" href="css/portfolio.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+
+  <!-- 🌐 NAVBAR -->
+  <nav>
+    <div class="nav-logo">
+      <a href="#home"><img src="assets/logo.png" alt="Logo" /></a>
+    </div>
+    <ul>
+      <li><a href="#a-propos">À propos</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+    
+  <main>
+
+    <!-- 🚢 HOME -->
+    <section id="home" class="home">
+      <div class="home-content">
+        <h1>Ne laissez pas vos idées<br>prendre le large</h1>
+        <img src="assets/bateau.png" alt="Illustration bateau" class="home-img">
+        <img src="assets/encrez-texte.png" alt="Texte Encrez-les !" class="home-text-img">
+      </div>
+    </section>
+
+    <!-- 🙋‍♀️ À PROPOS -->
+    <section id="a-propos" class="a-propos">
+      <div class="a-propos-bg"></div>
+
+      <div class="a-propos-content">
+        <h2 class="a-propos-title">Qui suis-je ?</h2>
+
+        <div class="a-propos-text" id="scrollable-text">
+          <p>
+            Je suis Marie, facilitatrice graphique et facilitatrice en intelligence collective. Mon métier ? Transformer les idées en images pour clarifier, engager et faire avancer les projets.
+            J’ai découvert la pensée visuelle en 2016 dans le cadre de projets transfrontaliers. La complexité culturelle rendait les échanges difficiles, mais la visualisation nous a permis de créer un langage commun.
+            Convaincue de son impact, je me suis formée au fil des années pour affiner mon approche. Pour moi, le visuel n’est pas qu’un support décoratif : il aide à structurer la pensée et à accompagner les dynamiques collectives.
+            Fresqueuse du changement, j’aide à rendre visible l’invisible par le visuel. Mon style ? Vivant et évocateur, conçu pour être compris de tous.
+            En plus de mes interventions, je forme aussi à la facilitation graphique pour aider chacun·e à intégrer la pensée visuelle à son quotidien, que ce soit en français ou en allemand.
+          </p>
+        </div>
+
+        <div class="cta-scroll" onclick="document.getElementById('scrollable-text').scrollBy({ top: 200, behavior: 'smooth' });">
+          En savoir +
+        </div>
+      </div>
+    </section>
+
+    <!-- autres sections -->
+    <section id="services"></section>
+    <section id="portfolio"></section>
+    <section id="contact"></section>
+
+  </main>
+
+</body>
+</html>

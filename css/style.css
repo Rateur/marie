@@ -1,0 +1,239 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ========== RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
+  line-height: 1.5;
+  color: #111;
+}
+
+/* ========== NAVBAR RESPONSIVE & FLUIDE ========== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(45px);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  width: 100vw;                /* ✅ plein écran réel */
+  max-width: 100%;
+  overflow-x: hidden;          /* ✅ pas de scroll horizontal intempestif */
+}
+
+
+#logo {
+  height: clamp(22px, 5vw, 30px);
+  flex-shrink: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: clamp(0.3rem, 3vw, 1rem);
+  margin: 0;
+  padding: 0;
+  flex-shrink: 1;
+}
+
+
+nav li {
+  flex-shrink: 0;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: clamp(0.7rem, 2vw, 1rem);
+  color: #111;
+  font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #0077b6;
+}
+
+
+/* ========== ESPACE POUR COMPENSER LA NAV STICKY ========== */
+main section {
+  scroll-margin-top: 80px;
+  min-height: 100vh;
+  padding: 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+#home { background: #f2f2f2; }
+#a-propos { background: #e0f7fa; }
+#services { background: #fbe9e7; }
+#collaboration { background: #e8f5e9; }
+#portfolio { background: #ede7f6; }
+#temoignages { background: #fff3e0; }
+#contact { background: #f3e5f5; }
+
+/* ========== FOOTER ========== */
+footer {
+  padding: 2rem;
+  text-align: center;
+  background: #ccc;
+}
+
+
+/* ========== SECTION HOME ========== */
+#home {
+  background: url('../assets/home-bg.jpg') center/cover no-repeat;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  position: relative;
+}
+
+.home-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* on aligne vers le haut mais on descend avec le margin */
+  padding: 2rem;
+  text-align: center;
+  margin-top: 35vh; /* 🔽 ajuste ici la position verticale */
+}
+
+
+.home-text h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.3;
+  font-weight: bold;
+}
+
+.home-box {
+  background: rgba(173, 234, 242, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  padding: 1.5rem 1.5rem; /* 🔽 moins d'espace vertical */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* 🔽 réduit l'espace entre les éléments */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 380px; /* 🔽 réduit la largeur max */
+  width: 100%;
+}
+
+
+.home-box img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+}
+
+.home-encrez {
+  max-width: 200px;
+}
+
+.cta-button {
+  background: #0077b6;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #005f91;
+}
+
+/* ========== SECTION À PROPOS ========== */
+#a-propos {
+  position: relative;
+  padding: 80px 20px;
+  background-color: transparent;
+  color: #0F4287;
+}
+
+.shapes-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('../assets/form_bg_1_pc.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .shapes-background {
+    background-image: url('../assets/form_bg_1_tel.png');
+  }
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: inherit;
+}
+
+.a-propos-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.a-propos-text-wrapper {
+  position: relative;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.a-propos-scrollable-text {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.a-propos-scrollable-text p {
+  margin-bottom: 1em;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Changement de couleur automatique selon fond */
+.a-propos-scrollable-text {
+  mix-blend-mode: difference;
+  color: white;
+}
+
+/* Bouton En savoir plus */
+.read-more-button {
+  margin-top: 10px;
+  background-color: #0F4287;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.read-more-button:hover {
+  background-color: #092c59;
+}
