@@ -1,54 +1,49 @@
 #home {
-    background: url('../assets/home-bg.jpg') center/cover no-repeat;
-    color: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    position: relative;
-  }
-  
-  .home-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-width: 1200px;
-    width: 100%;
-    text-align: center;
-    margin-top: 20vh;
-  }
-  
-  .home-box {
-    background: rgba(173, 234, 242, 0.85);
-    backdrop-filter: blur(10px);
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    max-width: 420px;
-    width: 100%;
-  }
-  
-  .home-box h1 {
-    font-family: 'Comic Sans MS', cursive;
-    font-size: 1.5rem;
-    color: black;
-  }
-  
-  .home-img {
-    max-width: 250px;
-    width: 100%;
-    height: auto;
-  }
-  
-  .home-encrez {
-    max-width: 200px;
-    width: 100%;
-    height: auto;
-  }
-  
+  background: url('../assets/home-bg.jpg') center/cover no-repeat;
+  color: #111;
+  display: flex;
+  align-items: flex-start; /* aligne en haut pour contrôler la descente via padding */
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 45vh; /* ← ajuste ici la descente du bloc */
+}
+
+.home-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.home-box {
+  background: rgba(173, 234, 242, 0.6); /* transparence plus visible */
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 420px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.home-box h1 {
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.home-img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+}
+
+.home-encrez {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+}
