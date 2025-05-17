@@ -72,7 +72,7 @@
     </section>
     <!-- end services-->
     
-<!-- popups -->
+<!-- popups service -->
 <div class="modal" id="popup-formation" data-type="formation">
   <div class="modal-content">
     <button class="modal-close" aria-label="Fermer">×</button>
@@ -117,7 +117,7 @@
     </p>
   </div>
 </div>
-<!-- end popups -->
+<!-- end popups services-->
 
     <!-- a-propos -->
     <section id="a-propos">
@@ -157,17 +157,46 @@
 </section>
 <!-- end popup process -->
 
-    <!-- portfolio -->
-    <section id="portfolio"></section>
-    <!-- end portfolio -->
+<!-- Portfolio Section -->
+<section id="portfolio">
+  <h2 class="section-title">Portfolio</h2>
 
-    <!-- contact -->
-    <section id="contact"></section>
-    <!-- end contact -->
+  <div class="carousel-container">
+    <button class="carousel-arrow left" aria-label="Précédent">&#8592;</button>
+
+    <div class="portfolio-carousel" id="portfolio-carousel">
+      <img src="assets/portfolio/cdt transfo .jpg" alt="Projet 1" data-title="Titre 1" data-description="Description du projet 1">
+      <img src="assets/portfolio/concept intersectionnalité v3.jpg" alt="Projet 2" data-title="Titre 2" data-description="Description du projet 2">
+      <img src="assets/portfolio/concepts approche v3.jpg" alt="Projet 3" data-title="Titre 3" data-description="Description du projet 3">
+      <img src="assets/portfolio/note politique sansas v2.jpg" alt="Projet 4" data-title="Titre 4" data-description="Description du projet 4">
+    </div>
+
+    <button class="carousel-arrow right" aria-label="Suivant">&#8594;</button>
+  </div>
+
+  <button class="discover-btn" id="open-popup">Découvrir</button>
+
+  <!-- Popup -->
+  <div class="portfolio-popup" id="portfolio-popup">
+    <div class="popup-content">
+      <button class="popup-close" aria-label="Fermer">×</button>
+      <h3 id="popup-title"></h3>
+      <div class="popup-image-wrapper">
+        <img src="" alt="Image popup" id="popup-image" />
+      </div>
+      <p id="popup-description"></p>
+    </div>
+  </div>
+</section>
+
+<!-- contact -->
+<section id="contact"></section>
+<!-- end contact -->
 
   </main>
   <script src="js/services-popup.js"></script>
   <script src="js/process-popup.js"></script>
+  <script src="js/portfolio.js"></script>
 </body>
 </html>
 s

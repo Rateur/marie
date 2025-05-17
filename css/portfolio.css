@@ -1,0 +1,143 @@
+/* Section Title */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0F4287;
+  margin-bottom: 1.5rem;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+/* Carousel Container */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.portfolio-carousel {
+  display: flex;
+  overflow: hidden;
+  width: 60vw;
+  max-width: 800px;
+  aspect-ratio: 4 / 3;
+}
+
+.portfolio-carousel img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  border-radius: 10px;
+  display: none;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-carousel img.active {
+  display: block;
+}
+
+/* Arrows */
+.carousel-arrow {
+  background-color: #0F4287;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-arrow:hover {
+  background-color: #09346b;
+}
+
+/* Discover Button */
+.discover-btn {
+  margin: 2rem auto 0;
+  display: block;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  background-color: #669bbc;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Popup */
+.portfolio-popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 66, 135, 0.5);
+  backdrop-filter: blur(8px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.portfolio-popup.active {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 90vw;
+  width: 100%;
+  max-height: 90vh;
+  text-align: center;
+  animation: scaleIn 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.popup-image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 8px;
+}
+
+#popup-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #0F4287;
+  font-weight: bold;
+}
+
+#popup-description {
+  margin-top: 1rem;
+  color: #333;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
