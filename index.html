@@ -157,10 +157,10 @@
 </section>
 <!-- end popup process -->
 
-<!-- Portfolio Section -->
+<!-- portfolio section -->
 <section id="portfolio">
   <h2 class="section-title">Portfolio</h2>
-
+<!-- portfolio carousel -->
   <div class="carousel-container">
     <button class="carousel-arrow left" aria-label="Précédent">&#8592;</button>
 
@@ -170,13 +170,14 @@
       <img src="assets/portfolio/concepts approche v3.jpg" alt="Projet 3" data-title="Titre 3" data-description="Description du projet 3">
       <img src="assets/portfolio/note politique sansas v2.jpg" alt="Projet 4" data-title="Titre 4" data-description="Description du projet 4">
     </div>
+    <!-- end portfolio carousel -->
 
     <button class="carousel-arrow right" aria-label="Suivant">&#8594;</button>
   </div>
 
   <button class="discover-btn" id="open-popup">Découvrir</button>
 
-  <!-- Popup -->
+  <!-- popup portfolio -->
   <div class="portfolio-popup" id="portfolio-popup">
     <div class="popup-content">
       <button class="popup-close" aria-label="Fermer">×</button>
@@ -187,16 +188,37 @@
       <p id="popup-description"></p>
     </div>
   </div>
+  <!-- end popup portfolio -->
 </section>
+<!-- end portfolio -->
 
 <!-- contact -->
-<section id="contact"></section>
+<section id="contact">
+  <div class="contact-box">
+    <div class="contact-container">
+      <form id="contact-form">
+        <input type="text" name="prenom" placeholder="Prénom" required>
+        <input type="text" name="nom" placeholder="Nom" required>
+        <input type="email" name="email" placeholder="Adresse-mail" required>
+        <input type="text" name="objet" placeholder="Objet" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Envoyer</button>
+        <p id="form-message" class="hidden">Merci pour votre message !</p>
+      </form>
+
+      <div class="contact-illustration">
+        <img src="assets/contact-illustration.png" alt="Illustration Contact">
+        <h3>Contactez-moi !</h3>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- end contact -->
 
   </main>
   <script src="js/services-popup.js"></script>
   <script src="js/process-popup.js"></script>
   <script src="js/portfolio.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 </html>
-s
