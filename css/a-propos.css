@@ -11,7 +11,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: url('../assets/form_bg_1_pc.png');
+  background-image: url('../assets/form_bg/form_bg_1_pc.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,7 +19,7 @@
 
 @media (max-width: 768px) {
   .shapes-background {
-    background-image: url('../assets/form_bg_1_tel.png');
+    background-image: url('../assets/form_bg/form_bg_1_tel.png');
   }
 }
 

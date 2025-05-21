@@ -1,5 +1,5 @@
 #home {
-  background: url('../assets/home-bg.jpg') center/cover no-repeat;
+  background: url('../assets/form_bg/home-bg.jpg') center/cover no-repeat;
   color: #111;
   display: flex;
   align-items: flex-start; /* aligne en haut pour contrôler la descente via padding */
