@@ -1,0 +1,43 @@
+#avis {
+  background-image: url('../assets/avis-nuages.png');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.avis-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.avis-card {
+  background-color: #a8c3e4;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.avis-card:hover {
+  transform: scale(1.03);
+}
+
+.avis-card h3 {
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1.2rem;
+  color: #0F4287;
+}
+
+.avis-card p {
+  margin: 0.5rem 0;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.stars {
+  font-size: 1.5rem;
+  color: #0F4287;
+}

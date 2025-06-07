@@ -15,4 +15,4 @@ legalPopup.addEventListener('click', (e) => {
     legalPopup.classList.remove('active');
   }
 });
-
+    
