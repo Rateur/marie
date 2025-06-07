@@ -21,11 +21,12 @@
   <link rel="stylesheet" href="css/footer.css" />
 </head>
 <body>
+  <div id="loader" class="loader" aria-label="Chargement" role="status"></div>
 
   <!-- navbar -->
   <nav>
     <div class="nav-logo">
-      <a href="#home"><img src="assets/logo.png" alt="Logo" /></a>
+      <a href="#home"><img loading="lazy" decoding="async" src="assets/logo.png" alt="Logo" /></a>
     </div>
     <ul>
       <li><a href="#services">Services</a></li>
@@ -44,8 +45,8 @@
     <div class="home-wrapper">
       <div class="home-box">
         <h1>Ne laissez pas vos idées<br>prendre le large</h1>
-        <img src="assets/home/bateau.png" alt="Illustration bateau" class="home-img" />
-        <img src="assets/home/encrez-texte.png" alt="Texte Encrez-les !" class="home-encrez" />
+        <img loading="lazy" decoding="async" src="assets/home/bateau.png" alt="Illustration bateau" class="home-img" />
+        <img loading="lazy" decoding="async" src="assets/home/encrez-texte.png" alt="Texte Encrez-les !" class="home-encrez" />
       </div>
     </div>
   </section>
@@ -59,16 +60,16 @@
     
       <div class="services-grid">
         <div class="service-card" data-service="formation">
-          <img src="assets/services/service-formation.png" alt="Formation à la facilitation graphique" />
+          <img loading="lazy" decoding="async" src="assets/services/service-formation.png" alt="Formation à la facilitation graphique" />
         </div>
         <div class="service-card" data-service="syntheses">
-          <img src="assets/services/service-syntheses.png" alt="Synthèses visuelles en différé" />
+          <img loading="lazy" decoding="async" src="assets/services/service-syntheses.png" alt="Synthèses visuelles en différé" />
         </div>
         <div class="service-card" data-service="capture">
-          <img src="assets/services/service-capture.png" alt="Capture graphique en direct" />
+          <img loading="lazy" decoding="async" src="assets/services/service-capture.png" alt="Capture graphique en direct" />
         </div>
         <div class="service-card" data-service="visuels">
-          <img src="assets/services/service-visuels.png" alt="Visuels sur mesure" />
+          <img loading="lazy" decoding="async" src="assets/services/service-visuels.png" alt="Visuels sur mesure" />
         </div>
       </div>
     </section>
@@ -78,7 +79,7 @@
 <div class="modal" id="popup-formation" data-type="formation">
   <div class="modal-content">
     <button class="modal-close" aria-label="Fermer">×</button>
-    <img src="assets/services/service-formation.png" alt="Formation">
+    <img loading="lazy" decoding="async" src="assets/services/service-formation.png" alt="Formation">
     <p class="modal-text">
       Tracez vos idées pour les rendre marquantes. <br>
       Et si vos équipes pouvaient mieux structurer, partager et mémoriser leurs idées ? Grâce à la facilitation graphique, elles apprendront à ancrer visuellement les messages clés et à rendre les échanges plus clairs et engageants. En présentiel (2 jours) ou en distanciel (1/2 journée), j’adapte mes formations à vos enjeux. <br>
@@ -90,7 +91,7 @@
 <div class="modal" id="popup-syntheses" data-type="syntheses">
   <div class="modal-content">
     <button class="modal-close" aria-label="Fermer">×</button>
-    <img src="assets/services/service-syntheses.png" alt="Synthèses visuelles">
+    <img loading="lazy" decoding="async" src="assets/services/service-syntheses.png" alt="Synthèses visuelles">
     <p class="modal-text">
       Fixez l’essentiel, facilitez la compréhension <br>
       Vous avez des rapports, documents stratégiques ou webinaires à valoriser ? Je les transforme en synthèses visuelles percutantes, en numérique ou sur papier. Une façon efficace d’ancrer les informations essentielles, de capter l’attention et d’en faciliter la restitution.
@@ -101,7 +102,7 @@
 <div class="modal" id="popup-capture" data-type="capture">
   <div class="modal-content">
     <button class="modal-close" aria-label="Fermer">×</button>
-    <img src="assets/services/service-capture.png" alt="Captures illustrées">
+    <img loading="lazy" decoding="async" src="assets/services/service-capture.png" alt="Captures illustrées">
     <p class="modal-text">
       Marquez les esprits en rendant vos événements engageants et interactifs. <br>
       Lors de vos conférences, séminaires ou ateliers, je capture en temps réel les idées fortes et les échanges clés, sous forme de visuels clairs et engageants, en numérique ou sur papier. Envie d'aller encore plus loin? J’anime des fresques participatives, où chacun.e contribue à co-créer une fresque visuelle.
@@ -112,7 +113,7 @@
 <div class="modal" id="popup-visuels" data-type="visuels">
   <div class="modal-content">
     <button class="modal-close" aria-label="Fermer">×</button>
-    <img src="assets/services/service-visuels.png" alt="Création de visuels">
+    <img loading="lazy" decoding="async" src="assets/services/service-visuels.png" alt="Création de visuels">
     <p class="modal-text">
       Faites passer votre message avec impact <br>
       Un bon visuel ancre une idée durablement. Que ce soit pour votre communication, vos formations ou votre site web, je conçois des illustrations sur mesure qui rendent vos messages plus accessibles, mémorables et percutants. Transformons ensemble vos idées en images qui marquent !
@@ -142,8 +143,7 @@
 <section id="collaboration" class="collab-section">
   <h2 class="section-title">Comment collaborer avec moi ?</h2>
   <div class="collab-image-wrapper">
-    <img
-      src="assets/collaboration-schema.png"
+    <img loading="lazy" decoding="async"       src="assets/collaboration-schema.png"
       alt="Schéma de collaboration"
       class="collab-clickable"
     />
@@ -153,7 +153,7 @@
   <div class="popup-image-modal" id="popup-process">
     <div class="popup-image-content">
       <button class="popup-close" aria-label="Fermer">×</button>
-      <img src="assets/collaboration-schema.png" alt="Image agrandie" />
+      <img loading="lazy" decoding="async" src="assets/collaboration-schema.png" alt="Image agrandie" />
     </div>
   </div>
 </section>
@@ -167,10 +167,10 @@
     <button class="carousel-arrow left" aria-label="Précédent">&#8592;</button>
 
     <div class="portfolio-carousel" id="portfolio-carousel">
-      <img src="assets/portfolio/cdt transfo .jpg" alt="Projet 1" data-title="Titre 1" data-description="Description du projet 1">
-      <img src="assets/portfolio/concept intersectionnalité v3.jpg" alt="Projet 2" data-title="Titre 2" data-description="Description du projet 2">
-      <img src="assets/portfolio/concepts approche v3.jpg" alt="Projet 3" data-title="Titre 3" data-description="Description du projet 3">
-      <img src="assets/portfolio/note politique sansas v2.jpg" alt="Projet 4" data-title="Titre 4" data-description="Description du projet 4">
+      <img loading="lazy" decoding="async" src="assets/portfolio/cdt transfo .jpg" alt="Projet 1" data-title="Titre 1" data-description="Description du projet 1">
+      <img loading="lazy" decoding="async" src="assets/portfolio/concept intersectionnalité v3.jpg" alt="Projet 2" data-title="Titre 2" data-description="Description du projet 2">
+      <img loading="lazy" decoding="async" src="assets/portfolio/concepts approche v3.jpg" alt="Projet 3" data-title="Titre 3" data-description="Description du projet 3">
+      <img loading="lazy" decoding="async" src="assets/portfolio/note politique sansas v2.jpg" alt="Projet 4" data-title="Titre 4" data-description="Description du projet 4">
     </div>
     <!-- end portfolio carousel -->
 
@@ -185,7 +185,7 @@
       <button class="popup-close" aria-label="Fermer">×</button>
       <h3 id="popup-title"></h3>
       <div class="popup-image-wrapper">
-        <img src="" alt="Image popup" id="popup-image" />
+        <img loading="lazy" decoding="async" src="" alt="Image popup" id="popup-image" />
       </div>
       <p id="popup-description"></p>
     </div>
@@ -233,17 +233,26 @@
   <div class="contact-box">
     <div class="contact-container">
       <form id="contact-form">
-        <input type="text" name="prenom" placeholder="Prénom" required>
-        <input type="text" name="nom" placeholder="Nom" required>
-        <input type="email" name="email" placeholder="Adresse-mail" required>
-        <input type="text" name="objet" placeholder="Objet" required>
-        <textarea name="message" placeholder="Message" required></textarea>
+        <label for="prenom" class="visually-hidden">Prénom</label>
+        <input id="prenom" type="text" name="prenom" placeholder="Prénom" required>
+        <label for="nom" class="visually-hidden">Nom</label>
+        <input id="nom" type="text" name="nom" placeholder="Nom" required>
+        <label for="email" class="visually-hidden">Adresse-mail</label>
+        <input id="email" type="email" name="email" placeholder="Adresse-mail" required>
+        <label for="objet" class="visually-hidden">Objet</label>
+        <input id="objet" type="text" name="objet" placeholder="Objet" required>
+        <label for="message" class="visually-hidden">Message</label>
+        <textarea id="message" name="message" placeholder="Message" required></textarea>
+        <div class="checkbox-container">
+          <input id="consent" type="checkbox" required>
+          <label for="consent">J'accepte la <a href="#legal-popup">politique de confidentialité</a></label>
+        </div>
         <button type="submit">Envoyer</button>
-        <p id="form-message" class="hidden">Merci pour votre message !</p>
+        <p id="form-message" aria-live="polite" class="hidden">Merci pour votre message !</p>
       </form>
 
       <div class="contact-illustration">
-        <img src="assets/contact-illustration.png" alt="Illustration Contact">
+        <img loading="lazy" decoding="async" src="assets/contact-illustration.png" alt="Illustration Contact">
         <h3>Contactez-moi !</h3>
       </div>
     </div>
@@ -300,6 +309,7 @@
   </div>
 </div>
   </main>
+  <script src="js/loader.js"></script>
   <script src="js/popup-footer"></script>
   <script src="js/services-popup.js"></script>
   <script src="js/process-popup.js"></script>

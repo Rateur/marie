@@ -82,3 +82,4 @@
   font-family: inherit;
   margin-top: 1rem;
 }
+.checkbox-container{display:flex;align-items:center;font-size:.9rem}.checkbox-container input{margin-right:.5rem}

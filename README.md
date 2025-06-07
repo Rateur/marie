@@ -8,22 +8,29 @@ Bienvenue sur le dépôt du site officiel de **Marie**, facilitatrice en intelli
 
 ## 🔧 Statut actuel
 
-🛠️ Le site est **en construction**.  
+🛠️ Le site est **en construction**.
 Certaines sections sont encore en cours de développement ou d’adaptation responsive.
 
 Merci de votre **patience** 🙏
 
 ---
 
-## 🚀 Technologies utilisées
+## 🚀 Fonctionnalités
 
-- HTML5 / CSS3
-- JavaScript (vanilla)
-- Architecture responsive desktop → mobile
+- Structure responsive pensée *desktop → mobile*
 - Système de popups et navigation fluide
-- GitHub pour le versionnage et le déploiement futur
+- Formulaire de contact conforme RGPD (case à cocher obligatoire)
+- Loader accessible pendant le chargement de la page
+- Images optimisées via `loading="lazy"`
 
----
+## 🔨 Développement
+
+Le site ne nécessite pas de dépendances particulières.
+Pour tester localement :
+
+```bash
+# cloner le dépôt puis ouvrir index.html dans votre navigateur
+```
 
 ## 🤝 Contact
 
