@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .footer-icon svg {
@@ -31,6 +32,7 @@
   font-size: 1rem;
   cursor: pointer;
   text-decoration: underline;
+  font-family: inherit;
 }
 
 /* ===== MENTIONS POPUP ===== */
@@ -47,30 +49,63 @@
 
 .legal-popup.active {
   display: flex;
+  animation: fadeInPopup 0.3s ease-out forwards;
+}
+
+.legal-popup.fade-out {
+  animation: fadeOutPopup 0.3s ease-in forwards;
 }
 
 .legal-content {
   background: white;
+  color: #0F4287;
   padding: 2rem;
-  border-radius: 10px;
-  max-width: 500px;
+  border-radius: 12px;
+  max-width: 700px;
   width: 90%;
-  text-align: center;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: left;
   position: relative;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  font-family: 'Comic Sans MS', cursive;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+.legal-content h3,
+.legal-content h4 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #0F4287;
+}
+
+.legal-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Scroll style (optionnel) */
+.legal-content::-webkit-scrollbar {
+  width: 8px;
+}
+.legal-content::-webkit-scrollbar-thumb {
+  background-color: rgba(15, 66, 135, 0.3);
+  border-radius: 10px;
+}
+
+/* Fermeture */
 .close-legal {
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 12px;
+  right: 16px;
   background: none;
   border: none;
   font-size: 1.5rem;
+  color: #0F4287;
   cursor: pointer;
 }
 
-/* Animation d’apparition */
+/* Animations */
 @keyframes fadeInPopup {
   from {
     opacity: 0;
@@ -82,7 +117,6 @@
   }
 }
 
-/* Animation de disparition */
 @keyframes fadeOutPopup {
   from {
     opacity: 1;
@@ -92,14 +126,4 @@
     opacity: 0;
     transform: translateY(10px);
   }
-}
-
-/* Quand la popup est visible */
-.legal-popup.active {
-  animation: fadeInPopup 0.3s ease-out forwards;
-}
-
-/* Quand elle se ferme */
-.legal-popup.fade-out {
-  animation: fadeOutPopup 0.3s ease-in forwards;
 }
