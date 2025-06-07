@@ -1,5 +1,5 @@
 #portfolio {
-  background-image: url('../assets/form_bg/form_bg_portfolio_pc.png');
+  background-image: url('../assets/form_bg/form_bg_collab_pc.png');
   background-size: cover;
   background-position: center;
 }
@@ -46,7 +46,7 @@
 
 /* Arrows */
 .carousel-arrow {
-  background-color: #0F4287;
+  background-color: #3FA6C8;
   color: white;
   font-size: 1.5rem;
   padding: 0.7rem;
@@ -62,7 +62,7 @@
 }
 
 .carousel-arrow:hover {
-  background-color: #09346b;
+  background-color: #6FA8F4;
 }
 
 /* Discover Button */
@@ -71,13 +71,16 @@
   display: block;
   padding: 0.75rem 2rem;
   font-size: 1.2rem;
-  background-color: #669bbc;
+  background-color: #3FA6C8;
   color: white;
   border-radius: 20px;
   border: none;
   cursor: pointer;
 }
 
+.discover-btn:hover {
+  background-color: #6FA8F4;
+}
 /* Popup */
 .portfolio-popup {
   position: fixed;
