@@ -31,7 +31,7 @@
 }
 
 .home-box h1 {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: inherit;
   font-size: 1.5rem;
   color: black;
 }
