@@ -6,7 +6,7 @@ const popupImg = document.getElementById('popup-image');
 const popupTitle = document.getElementById('popup-title');
 const popupDesc = document.getElementById('popup-description');
 const openPopup = document.getElementById('open-popup');
-const popupClose = document.querySelector('.popup-close');
+const popupClose = popup.querySelector('.popup-close');
 
 let current = 0;
 
