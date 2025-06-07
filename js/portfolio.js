@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+<<<<<<< HEAD
   popupClose.addEventListener('click', () => {
     popup.classList.remove('active');
   });
@@ -62,3 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === popup) popup.classList.remove('active');
   });
 });
+=======
+popup.addEventListener('click', (e) => {
+  if (e.target === popup) popup.classList.remove('active');
+});
+>>>>>>> origin/codex/modifier-fichiers-javascript-et-supprimer-script-vide
