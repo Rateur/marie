@@ -1,3 +1,9 @@
+#portfolio {
+  background-image: url('../assets/form_bg/form_bg_1_pc.png');
+  background-size: cover;
+  background-position: center;
+}
+
 /* Section Title */
 .section-title {
   text-align: center;

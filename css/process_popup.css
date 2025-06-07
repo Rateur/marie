@@ -1,3 +1,9 @@
+#collaboration {
+  background-image: url('../assets/form_bg/form_bg_1_pc.png');
+  background-size: cover;
+  background-position: center;
+}
+
 /* === POPUP IMAGE - Processus === */
 .popup-image-modal {
   position: fixed;
