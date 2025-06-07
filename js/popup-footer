@@ -1,0 +1,18 @@
+const openLegal = document.getElementById('open-legal');
+const legalPopup = document.getElementById('legal-popup');
+const closeLegal = document.querySelector('.close-legal');
+
+openLegal.addEventListener('click', () => {
+  legalPopup.classList.add('active');
+});
+
+closeLegal.addEventListener('click', () => {
+  legalPopup.classList.remove('active');
+});
+
+legalPopup.addEventListener('click', (e) => {
+  if (e.target === legalPopup) {
+    legalPopup.classList.remove('active');
+  }
+});
+
