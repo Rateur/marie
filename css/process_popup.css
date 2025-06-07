@@ -44,13 +44,13 @@
 
 .popup-close {
   position: absolute;
-  top: 8px;
-  right: 12px;
-  background: #fff;
-  border: none;
+  top: 1rem;
+  right: 1rem;
   font-size: 1.5rem;
+  color: #333;
+  background: none;
+  border: none;
   cursor: pointer;
-  z-index: 10;
 }
 
 .popup-process img {

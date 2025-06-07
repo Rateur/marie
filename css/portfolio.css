@@ -104,13 +104,13 @@
 
 .popup-close {
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 1rem;
+  right: 1rem;
   font-size: 1.5rem;
+  color: #333;
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 10;
 }
 
 .popup-image-wrapper img {
