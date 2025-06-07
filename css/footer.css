@@ -1,0 +1,40 @@
+#footer {
+  background: #9ED8DF;
+  color: #0F4287;
+  padding: 2rem 1rem;
+}
+
+#footer .footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#footer .footer-icon {
+  color: #0F4287;
+  display: inline-flex;
+}
+
+#footer .footer-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+  transition: fill 0.2s ease;
+}
+
+#footer .footer-icon:hover svg {
+  fill: #09346b;
+}
+
+#footer .footer-text {
+  background: none;
+  border: none;
+  color: #0F4287;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+#footer .footer-text:hover {
+  text-decoration: underline;
+}
