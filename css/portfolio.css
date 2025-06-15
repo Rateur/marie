@@ -141,6 +141,8 @@
 #popup-description {
   margin-top: 1rem;
   color: #333;
+  text-align: left;
+
 }
 
 @keyframes fadeIn {
