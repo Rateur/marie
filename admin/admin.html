@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Modifier le texte</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    label, textarea, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    textarea {
+      height: 200px;
+      resize: vertical;
+    }
+    .success {
+      color: green;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Modifier le texte de la pop-up "process"</h1>
+  <form id="update-form">
+    <label for="popupText">Texte :</label>
+    <textarea id="popupText" name="content"></textarea>
+    <button type="submit">Mettre à jour</button>
+  </form>
+  <p id="status"></p>
+
+  <script>
+    // Charger le texte existant depuis l'API
+    fetch('/.netlify/functions/getTexts')
+      .then(response => response.json())
+      .then(data => {
+        const processText = data.find(t => t.key === 'popup_process_text');
+        if (processText) {
+          document.getElementById('popupText').value = processText.content;
+        }
+      });
+
+    // Soumettre la mise à jour
+    document.getElementById('update-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const content = document.getElementById('popupText').value;
+
+      fetch('/.netlify/functions/updateText', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ key: 'popup_process_text', content })
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('status').textContent = 'Mise à jour réussie ✅';
+        document.getElementById('status').className = 'success';
+      })
+      .catch(() => {
+        document.getElementById('status').textContent = 'Erreur lors de la mise à jour ❌';
+        document.getElementById('status').className = 'error';
+      });
+    });
+  </script>
+</body>
+</html>

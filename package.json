@@ -1,0 +1,23 @@
+{
+  "name": "marie",
+  "version": "1.0.0",
+  "description": "Bienvenue sur le dépôt du site officiel de **Marie**, facilitatrice en intelligence collective et en facilitation graphique.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rateur/marie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rateur/marie/issues"
+  },
+  "homepage": "https://github.com/Rateur/marie#readme",
+  "dependencies": {
+    "@netlify/neon": "^0.1.0"
+  }
+}

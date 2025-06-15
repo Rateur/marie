@@ -48,6 +48,7 @@
 .popup-text {
   font-size: 1rem;
   line-height: 1.6;
+  align-items: baseline;
 }
 
 .popup-image-content img {
