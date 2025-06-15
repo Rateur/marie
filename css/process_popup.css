@@ -29,8 +29,10 @@
   overflow: auto; /* permet le scroll si besoin */
   padding: 1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .popup-image-content img {
@@ -40,6 +42,12 @@
   max-height: 80vh;
   object-fit: contain; /* empêche l'image d'être coupée */
   display: block;
+  margin-bottom: 1rem;
+}
+
+.popup-text {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .popup-image-content img {
