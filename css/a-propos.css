@@ -34,7 +34,7 @@
 
 /* Conteneur centré */
 .a-propos-content {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -146,6 +146,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 
 @media (max-width: 768px) {
   .a-propos-content {
