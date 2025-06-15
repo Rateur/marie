@@ -47,3 +47,16 @@
   width: 100%;
   height: auto;
 }
+
+.encrez-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.home-ancre {
+  max-width: 80px;
+  width: 100%;
+  height: auto;
+}
