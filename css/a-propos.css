@@ -37,8 +37,9 @@
   max-width: 900px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  gap: 2rem;
 }
 
 .a-propos-text-wrapper {
@@ -113,4 +114,21 @@
   font-family: inherit;
   color: #0F4287;
   opacity: 0.6;
+}
+
+/* Image à droite du texte */
+.a-propos-image {
+  max-width: 350px;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .a-propos-content {
+    flex-direction: column;
+  }
+  .a-propos-image {
+    max-width: 250px;
+  }
 }
