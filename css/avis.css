@@ -27,14 +27,14 @@
 }
 
 .avis-card h3 {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Segoe UI', sans-serif;
   font-size: 1rem;
   color: #0F4287;
 }
 
 .avis-card p {
   margin: 0.5rem 0;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Segoe UI', sans-serif;
   font-size: 0.9rem;
 }
 
