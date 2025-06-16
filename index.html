@@ -362,10 +362,9 @@ Avec cette approche, vos idées ne restent pas à l’état d’ébauche : elles
           <textarea name="message" placeholder="Message" required></textarea>
         </label>
 
-        <label class="checkbox-container">
-          <input type="checkbox" name="consent" required>
-          J'accepte la <a href="#legal-popup">politique de confidentialité</a>
-        </label>
+      <div class="checkbox-container">
+          <input id="consent" type="checkbox" required><label for="consent">J'accepte la <a href="#legal-popup">politique de confidentialité</a></label>
+      </div>
 
         <button type="submit">Envoyer</button>
       </form>
