@@ -80,4 +80,9 @@
       gap: 1rem;
     }
   }
+
+  @media (max-width: 600px){
+    #services{padding:3rem 1rem;}
+    .service-card{max-width:300px;margin:0 auto;}
+  }
   

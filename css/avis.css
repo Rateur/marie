@@ -49,3 +49,7 @@
   height: 24px;
   display: inline-block;
 }
+
+@media (max-width: 600px){
+  .avis-wrapper{grid-template-columns:1fr;}
+}

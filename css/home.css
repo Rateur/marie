@@ -59,3 +59,9 @@
   width: 100%;
   height: auto;
 }
+
+@media (max-width: 600px){
+  #home{padding-top:30vh;}
+  .home-box{padding:1.5rem;gap:1rem;}
+  .home-box h1{font-size:1.2rem;}
+}

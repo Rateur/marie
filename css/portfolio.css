@@ -154,3 +154,7 @@
   from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+@media (max-width: 600px){
+  .portfolio-carousel{width:90vw;}
+}

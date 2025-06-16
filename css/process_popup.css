@@ -84,3 +84,7 @@
   font-size: 1rem;
   color: #0F4287;
 }
+
+@media (max-width: 600px){
+  .collab-image-wrapper img{max-width:90%;}
+}
