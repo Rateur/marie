@@ -8,7 +8,7 @@
 
 .avis-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -16,7 +16,7 @@
 
 .avis-card {
   background-color: #a8c3e4;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
@@ -28,16 +28,17 @@
 
 .avis-card h3 {
   font-family: 'Comic Sans MS', cursive;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #0F4287;
 }
 
 .avis-card p {
   margin: 0.5rem 0;
   font-family: 'Comic Sans MS', cursive;
+  font-size: 0.9rem;
 }
 
 .stars {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #0F4287;
 }
