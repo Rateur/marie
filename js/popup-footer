@@ -1,6 +1,9 @@
 const openLegal = document.getElementById('open-legal');
 const legalPopup = document.getElementById('legal-popup');
 const closeLegal = document.querySelector('.close-legal');
+const openPrivacyLinks = document.querySelectorAll('.open-privacy');
+const privacyPopup = document.getElementById('privacy-popup');
+const closePrivacy = document.querySelector('.close-privacy');
 
 openLegal.addEventListener('click', () => {
   legalPopup.classList.add('active');
@@ -13,6 +16,23 @@ closeLegal.addEventListener('click', () => {
 legalPopup.addEventListener('click', (e) => {
   if (e.target === legalPopup) {
     legalPopup.classList.remove('active');
+  }
+});
+
+openPrivacyLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    privacyPopup.classList.add('active');
+  });
+});
+
+closePrivacy.addEventListener('click', () => {
+  privacyPopup.classList.remove('active');
+});
+
+privacyPopup.addEventListener('click', (e) => {
+  if (e.target === privacyPopup) {
+    privacyPopup.classList.remove('active');
   }
 });
     

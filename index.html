@@ -363,7 +363,8 @@ Avec cette approche, vos idées ne restent pas à l’état d’ébauche : elles
         </label>
 
       <div class="checkbox-container">
-          <input id="consent" type="checkbox" required><label for="consent">J'accepte la <a href="#legal-popup">politique de confidentialité</a></label>
+          <input id="consent" type="checkbox" required>
+          <label for="consent">J'accepte la <a href="#privacy-popup" class="open-privacy">politique de confidentialité</a></label>
       </div>
 
         <button type="submit">Envoyer</button>
@@ -397,10 +398,10 @@ Avec cette approche, vos idées ne restent pas à l’état d’ébauche : elles
 </footer>
 
 <!-- POP-UP MENTIONS LÉGALES -->
-<div class="legal-popup" id="legal-popup">
-  <div class="legal-content">
-    <button class="close-legal" aria-label="Fermer">×</button>
-    <h3>Mentions légales</h3>
+  <div class="legal-popup" id="legal-popup">
+    <div class="legal-content">
+      <button class="close-legal" aria-label="Fermer">×</button>
+      <h3>Mentions légales</h3>
   <p><strong>Propriétaire du site :</strong> Marie HAMIDA EI<br>
   SIRET : 95186768800016<br>
   32 allée de la Robertsau, 67000 Strasbourg<br>
@@ -425,6 +426,21 @@ Avec cette approche, vos idées ne restent pas à l’état d’ébauche : elles
   <p>Conformément à la loi “Informatique et Libertés”, vous disposez d’un droit d’accès, de rectification et de suppression de vos données. Contact : encreusedidees@gmail.com</p>
 
   <p style="margin-top: 1rem;"><em>Dernière mise à jour : juin 2025</em></p>
+  </div>
+</div>
+
+<!-- POP-UP POLITIQUE DE CONFIDENTIALITÉ -->
+<div class="privacy-popup" id="privacy-popup">
+  <div class="privacy-content">
+    <button class="close-privacy" aria-label="Fermer">×</button>
+    <h3>Politique de confidentialité</h3>
+    <p>Ce formulaire est géré via le service externe <strong>Formspree</strong>. Lorsque vous envoyez un message, les données saisies
+      (prénom, nom, adresse-mail, objet et contenu du message) sont transmises à Formspree afin de nous être relayées par e‑mail.</p>
+    <p>Nous n'utilisons ces informations que pour répondre à votre demande et ne les conservons pas au‑delà de cette finalité.
+      Formspree les stocke de manière temporaire pour assurer la livraison du message.</p>
+    <p>En aucun cas vos données ne sont cédées à des tiers. Conformément au RGPD, vous pouvez demander l'accès, la rectification ou la suppression de vos informations
+      en nous écrivant à <a href="mailto:encreusedidees@gmail.com">encreusedidees@gmail.com</a>.</p>
+    <p style="margin-top: 1rem;"><em>Dernière mise à jour : juin 2025</em></p>
   </div>
 </div>
   </main>
