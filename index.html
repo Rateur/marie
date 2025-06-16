@@ -332,23 +332,42 @@ Avec cette approche, vos idées ne restent pas à l’état d’ébauche : elles
 <section id="contact">
   <div class="contact-box">
     <div class="contact-container">
-      <form id="contact-form">
-        <label for="prenom" class="visually-hidden">Prénom</label>
-        <input id="prenom" type="text" name="prenom" placeholder="Prénom" required>
-        <label for="nom" class="visually-hidden">Nom</label>
-        <input id="nom" type="text" name="nom" placeholder="Nom" required>
-        <label for="email" class="visually-hidden">Adresse-mail</label>
-        <input id="email" type="email" name="email" placeholder="Adresse-mail" required>
-        <label for="objet" class="visually-hidden">Objet</label>
-        <input id="objet" type="text" name="objet" placeholder="Objet" required>
-        <label for="message" class="visually-hidden">Message</label>
-        <textarea id="message" name="message" placeholder="Message" required></textarea>
-        <div class="checkbox-container">
-          <input id="consent" type="checkbox" required>
-          <label for="consent">J'accepte la <a href="#legal-popup">politique de confidentialité</a></label>
-        </div>
+      <form
+        action="https://formspree.io/f/mgvyydln"
+        method="POST"
+        name="contact"
+      >
+        <label>
+          Prénom :
+          <input type="text" name="prenom" placeholder="Prénom" required>
+        </label>
+
+        <label>
+          Nom :
+          <input type="text" name="nom" placeholder="Nom" required>
+        </label>
+
+        <label>
+          Adresse-mail :
+          <input type="email" name="email" placeholder="Adresse-mail" required>
+        </label>
+
+        <label>
+          Objet :
+          <input type="text" name="objet" placeholder="Objet" required>
+        </label>
+
+        <label>
+          Message :
+          <textarea name="message" placeholder="Message" required></textarea>
+        </label>
+
+        <label class="checkbox-container">
+          <input type="checkbox" name="consent" required>
+          J'accepte la <a href="#legal-popup">politique de confidentialité</a>
+        </label>
+
         <button type="submit">Envoyer</button>
-        <p id="form-message" aria-live="polite" class="hidden">Merci pour votre message !</p>
       </form>
 
       <div class="contact-illustration">
@@ -358,6 +377,7 @@ Avec cette approche, vos idées ne restent pas à l’état d’ébauche : elles
     </div>
   </div>
 </section>
+
 <!-- end contact -->
 
 <!-- FOOTER -->
