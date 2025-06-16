@@ -2,11 +2,11 @@
   background: url('../assets/form_bg/home-bg.jpg') center/cover no-repeat;
   color: #111;
   display: flex;
-  align-items: flex-start; /* aligne en haut pour contrôler la descente via padding */
+  align-items: flex-end; /* place le bloc au bas de la section */
   justify-content: center;
   min-height: 100vh;
   position: relative;
-  padding-top: 60vh; /* ← ajuste ici la descente du bloc */
+  padding: 0 0 2rem; /* espace en bas */
 }
 
 .home-wrapper {
@@ -61,7 +61,7 @@
 }
 
 @media (max-width: 600px){
-  #home{padding-top:45vh;}
+  #home{padding:0 0 2rem;}
   .home-box{padding:1.5rem;gap:1rem;}
   .home-box h1{font-size:1.2rem;}
 }
