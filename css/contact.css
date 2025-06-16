@@ -76,6 +76,7 @@ form[name="contact"] button:hover {
 .checkbox-container a {
   color: #2c7a9f;
   text-decoration: underline;
+  white-space: nowrap;
 }
 
 .contact-illustration {

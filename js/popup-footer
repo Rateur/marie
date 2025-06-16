@@ -1,9 +1,11 @@
-const openLegal = document.getElementById('open-legal');
 const legalPopup = document.getElementById('legal-popup');
 const closeLegal = document.querySelector('.close-legal');
 
-openLegal.addEventListener('click', () => {
-  legalPopup.classList.add('active');
+document.querySelectorAll('[data-open-legal]').forEach(trigger => {
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    legalPopup.classList.add('active');
+  });
 });
 
 closeLegal.addEventListener('click', () => {
