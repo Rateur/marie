@@ -2,11 +2,10 @@
   background: url('../assets/form_bg/home-bg.jpg') center/cover no-repeat;
   color: #111;
   display: flex;
-  align-items: flex-start; /* aligne en haut pour contrôler la descente via padding */
-  justify-content: center;
+  align-items: flex-end; /* aligne en haut pour contrôler la descente via padding */
   min-height: 100vh;
   position: relative;
-  padding-top: 45vh; /* ← ajuste ici la descente du bloc */
+  padding-bottom: 10vh; /* ← ajuste ici la descente du bloc */
 }
 
 .home-wrapper {
