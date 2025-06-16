@@ -6,7 +6,7 @@
   justify-content: center;
   min-height: 100vh;
   position: relative;
-  padding-top: 45vh; /* ← ajuste ici la descente du bloc */
+  padding-top: 60vh; /* ← ajuste ici la descente du bloc */
 }
 
 .home-wrapper {
@@ -61,7 +61,7 @@
 }
 
 @media (max-width: 600px){
-  #home{padding-top:30vh;}
+  #home{padding-top:45vh;}
   .home-box{padding:1.5rem;gap:1rem;}
   .home-box h1{font-size:1.2rem;}
 }
