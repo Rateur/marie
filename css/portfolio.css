@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   position: relative;
 }
 
@@ -156,5 +156,5 @@
 }
 
 @media (max-width: 600px){
-  .portfolio-carousel{width:90vw;}
+  .portfolio-carousel{width:100vw;}
 }

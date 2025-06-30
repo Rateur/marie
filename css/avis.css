@@ -51,5 +51,9 @@
 }
 
 @media (max-width: 600px){
-  .avis-wrapper{grid-template-columns:1fr;}
+  #avis { padding: 3rem 1rem; }
+  .avis-wrapper { grid-template-columns: 1fr; }
+  .avis-card { padding: 0.4rem; }
+  .avis-card h3 { font-size: 0.85rem; }
+  .avis-card p { font-size: 0.8rem; }
 }
