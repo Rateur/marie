@@ -1,11 +1,8 @@
-const { Client } = require('pg');
 const { randomUUID } = require('crypto');
 
 exports.handler = async (event) => {
-  const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false }
-  });
+  const { neon } = await import('@netlify/neon');
+  const sql = neon(process.env.NETLIFY_DATABASE_URL || process.env.DATABASE_URL);
 
   let body = {};
   if (event.body) {
@@ -13,31 +10,24 @@ exports.handler = async (event) => {
   }
 
   try {
-    await client.connect();
     let result;
     switch (event.httpMethod) {
       case 'POST': {
         const id = body.id || randomUUID();
         const { author, rating, content, date } = body;
-        const { rows } = await client.query(
-          'INSERT INTO avis (id, author, rating, content, date) VALUES ($1,$2,$3,$4,$5) RETURNING *',
-          [id, author, rating, content, date]
-        );
+        const rows = await sql`INSERT INTO avis (id, author, rating, content, date) VALUES (${id}, ${author}, ${rating}, ${content}, ${date}) RETURNING *`;
         result = rows[0];
         break;
       }
       case 'PUT': {
         const { id, author, rating, content, date } = body;
-        const { rows } = await client.query(
-          'UPDATE avis SET author=$2, rating=$3, content=$4, date=$5 WHERE id=$1 RETURNING *',
-          [id, author, rating, content, date]
-        );
+        const rows = await sql`UPDATE avis SET author=${author}, rating=${rating}, content=${content}, date=${date} WHERE id=${id} RETURNING *`;
         result = rows[0];
         break;
       }
       case 'DELETE': {
         const { id } = body;
-        const { rows } = await client.query('DELETE FROM avis WHERE id=$1 RETURNING *', [id]);
+        const rows = await sql`DELETE FROM avis WHERE id=${id} RETURNING *`;
         result = rows[0];
         break;
       }
@@ -53,7 +43,5 @@ exports.handler = async (event) => {
       statusCode: 500,
       body: JSON.stringify({ status: 'error', message: error.message })
     };
-  } finally {
-    await client.end().catch(() => {});
   }
 };
