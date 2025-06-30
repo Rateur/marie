@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <style>
+    body{padding:20px}
+    table{width:100%;border-collapse:collapse;margin-bottom:1rem}
+    th,td{border:1px solid #ccc;padding:0.5rem;text-align:left}
+    form{margin-top:1rem;display:flex;flex-direction:column;max-width:600px}
+    form input,form textarea{margin-bottom:0.5rem;padding:0.5rem}
+    button{margin-right:0.5rem;padding:0.4rem 0.8rem}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <div id="login-container">
+    <h2>Connexion</h2>
+    <form id="login-form">
+      <input type="password" id="password" placeholder="Mot de passe" required>
+      <button type="submit">Se connecter</button>
+    </form>
+  </div>
+
+  <div id="admin-interface" class="hidden">
+    <h1>Administration</h1>
+
+    <section id="portfolios-section">
+      <h2>Portfolios</h2>
+      <table id="portfolios-table">
+        <thead>
+          <tr><th>Titre</th><th>Sous-titre</th><th>Image URL</th><th>Date</th><th>Description</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <h3>Ajouter / Modifier</h3>
+      <form id="portfolio-form">
+        <input type="hidden" id="portfolio-id">
+        <input type="text" id="portfolio-title" placeholder="Titre" required>
+        <input type="text" id="portfolio-subtitle" placeholder="Sous-titre" required>
+        <input type="text" id="portfolio-image_url" placeholder="Image URL" required>
+        <input type="date" id="portfolio-date" required>
+        <textarea id="portfolio-description" placeholder="Description"></textarea>
+        <div>
+          <button type="submit">Enregistrer</button>
+          <button type="button" id="cancel-portfolio-edit" class="hidden">Annuler</button>
+        </div>
+      </form>
+    </section>
+
+    <hr>
+
+    <section id="avis-section">
+      <h2>Avis</h2>
+      <table id="avis-table">
+        <thead>
+          <tr><th>Auteur</th><th>Note</th><th>Contenu</th><th>Date</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <h3>Ajouter / Modifier</h3>
+      <form id="avis-form">
+        <input type="hidden" id="avis-id">
+        <input type="text" id="avis-author" placeholder="Auteur" required>
+        <input type="number" min="1" max="5" id="avis-rating" placeholder="Note" required>
+        <textarea id="avis-content" placeholder="Contenu"></textarea>
+        <input type="date" id="avis-date" required>
+        <div>
+          <button type="submit">Enregistrer</button>
+          <button type="button" id="cancel-avis-edit" class="hidden">Annuler</button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+<script>
+  const ADMIN_PASS = '{{ADMIN_PASS}}';
+
+  const loginForm = document.getElementById('login-form');
+  const passwordInput = document.getElementById('password');
+  const loginContainer = document.getElementById('login-container');
+  const adminInterface = document.getElementById('admin-interface');
+
+  function showAdmin(){
+    loginContainer.style.display = 'none';
+    adminInterface.classList.remove('hidden');
+    fetchPortfolios();
+    fetchAvis();
+  }
+
+  if(localStorage.getItem('loggedIn')==='true'){
+    showAdmin();
+  }
+
+  loginForm.addEventListener('submit',e=>{
+    e.preventDefault();
+    if(passwordInput.value===ADMIN_PASS){
+      localStorage.setItem('loggedIn','true');
+      showAdmin();
+    }else{
+      alert('Mot de passe incorrect');
+    }
+    loginForm.reset();
+  });
+
+  // ----- PORTFOLIOS -----
+  const portfolioForm = document.getElementById('portfolio-form');
+  const portfolioTableBody = document.querySelector('#portfolios-table tbody');
+  const portfolioId = document.getElementById('portfolio-id');
+  const cancelPortfolioEdit = document.getElementById('cancel-portfolio-edit');
+
+  async function fetchPortfolios(){
+    const res = await fetch('/.netlify/functions/portfolios-get');
+    const json = await res.json();
+    if(json.status==='success') renderPortfolios(json.data);
+  }
+
+  function renderPortfolios(items){
+    portfolioTableBody.innerHTML='';
+    items.forEach(item=>{
+      const tr=document.createElement('tr');
+      tr.innerHTML=`<td>${item.title}</td>
+        <td>${item.subtitle}</td>
+        <td>${item.image_url}</td>
+        <td>${item.date?item.date.split('T')[0]:''}</td>
+        <td>${item.description||''}</td>
+        <td>
+          <button data-edit="${item.id}">Éditer</button>
+          <button data-delete="${item.id}">Supprimer</button>
+        </td>`;
+      portfolioTableBody.appendChild(tr);
+    });
+  }
+
+  portfolioTableBody.addEventListener('click',async e=>{
+    const id=e.target.dataset.edit||e.target.dataset.delete;
+    if(!id) return;
+    if(e.target.dataset.edit){
+      const res=await fetch('/.netlify/functions/portfolios-get');
+      const {data}=await res.json();
+      const item=data.find(p=>p.id===id);
+      if(item){
+        portfolioId.value=item.id;
+        document.getElementById('portfolio-title').value=item.title;
+        document.getElementById('portfolio-subtitle').value=item.subtitle;
+        document.getElementById('portfolio-image_url').value=item.image_url;
+        document.getElementById('portfolio-date').value=item.date?item.date.split('T')[0]:'';
+        document.getElementById('portfolio-description').value=item.description||'';
+        cancelPortfolioEdit.classList.remove('hidden');
+      }
+    }else if(e.target.dataset.delete){
+      if(confirm('Supprimer ?')){
+        await fetch('/.netlify/functions/portfolios-crud',{
+          method:'DELETE',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({id})
+        });
+        fetchPortfolios();
+      }
+    }
+  });
+
+  cancelPortfolioEdit.addEventListener('click',()=>{
+    portfolioForm.reset();
+    portfolioId.value='';
+    cancelPortfolioEdit.classList.add('hidden');
+  });
+
+  portfolioForm.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const data={
+      id: portfolioId.value||undefined,
+      title: document.getElementById('portfolio-title').value,
+      subtitle: document.getElementById('portfolio-subtitle').value,
+      image_url: document.getElementById('portfolio-image_url').value,
+      date: document.getElementById('portfolio-date').value,
+      description: document.getElementById('portfolio-description').value
+    };
+    const method=portfolioId.value?'PUT':'POST';
+    await fetch('/.netlify/functions/portfolios-crud',{
+      method,
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    });
+    portfolioForm.reset();
+    portfolioId.value='';
+    cancelPortfolioEdit.classList.add('hidden');
+    fetchPortfolios();
+  });
+
+  // ----- AVIS -----
+  const avisForm=document.getElementById('avis-form');
+  const avisTableBody=document.querySelector('#avis-table tbody');
+  const avisId=document.getElementById('avis-id');
+  const cancelAvisEdit=document.getElementById('cancel-avis-edit');
+
+  async function fetchAvis(){
+    const res=await fetch('/.netlify/functions/avis-get');
+    const json=await res.json();
+    if(json.status==='success') renderAvis(json.data);
+  }
+
+  function renderAvis(items){
+    avisTableBody.innerHTML='';
+    items.forEach(item=>{
+      const tr=document.createElement('tr');
+      tr.innerHTML=`<td>${item.author}</td>
+        <td>${item.rating}</td>
+        <td>${item.content}</td>
+        <td>${item.date?item.date.split('T')[0]:''}</td>
+        <td>
+          <button data-edit="${item.id}">Éditer</button>
+          <button data-delete="${item.id}">Supprimer</button>
+        </td>`;
+      avisTableBody.appendChild(tr);
+    });
+  }
+
+  avisTableBody.addEventListener('click',async e=>{
+    const id=e.target.dataset.edit||e.target.dataset.delete;
+    if(!id) return;
+    if(e.target.dataset.edit){
+      const res=await fetch('/.netlify/functions/avis-get');
+      const {data}=await res.json();
+      const item=data.find(a=>a.id===id);
+      if(item){
+        avisId.value=item.id;
+        document.getElementById('avis-author').value=item.author;
+        document.getElementById('avis-rating').value=item.rating;
+        document.getElementById('avis-content').value=item.content;
+        document.getElementById('avis-date').value=item.date?item.date.split('T')[0]:'';
+        cancelAvisEdit.classList.remove('hidden');
+      }
+    }else if(e.target.dataset.delete){
+      if(confirm('Supprimer ?')){
+        await fetch('/.netlify/functions/avis-crud',{
+          method:'DELETE',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({id})
+        });
+        fetchAvis();
+      }
+    }
+  });
+
+  cancelAvisEdit.addEventListener('click',()=>{
+    avisForm.reset();
+    avisId.value='';
+    cancelAvisEdit.classList.add('hidden');
+  });
+
+  avisForm.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const data={
+      id: avisId.value||undefined,
+      author: document.getElementById('avis-author').value,
+      rating: parseInt(document.getElementById('avis-rating').value,10),
+      content: document.getElementById('avis-content').value,
+      date: document.getElementById('avis-date').value
+    };
+    const method=avisId.value?'PUT':'POST';
+    await fetch('/.netlify/functions/avis-crud',{
+      method,
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    });
+    avisForm.reset();
+    avisId.value='';
+    cancelAvisEdit.classList.add('hidden');
+    fetchAvis();
+  });
+</script>
+</body>
+</html>
