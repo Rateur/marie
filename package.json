@@ -1,0 +1,11 @@
+{
+  "name": "marie",
+  "version": "1.0.0",
+  "description": "Site de Marie avec Netlify Functions",
+  "scripts": {
+    "start": "netlify dev"
+  },
+  "dependencies": {
+    "pg": "^8.11.5"
+  }
+}
