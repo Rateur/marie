@@ -1,40 +1,58 @@
 # 🌊 Site de Marie — Facilitatrice graphique & UX/UI
 
-Bienvenue sur le dépôt du site officiel de **Marie**, facilitatrice en intelligence collective et en facilitation graphique.
+Ce dépôt contient le code du site officiel de **Marie**, facilitatrice en intelligence collective et en facilitation graphique. Le site utilise désormais **Netlify Functions** et une base de données **Neon** pour gérer les avis clients et les éléments du portfolio.
 
-> 🎨 Un site en cours de création, pensé avec soin par **ValDev** (Valentin Périès).
+## Structure du projet
 
----
+- `index.html` – page principale
+- `admin.html` – interface d'administration protégée par mot de passe
+- `css/` et `js/` – ressources front‑end
+- `netlify/functions/` – API (avis, portfolio, login)
+- `assets/` – images
+- `package.json` – dépendances (pg)
 
-## 🔧 Statut actuel
+## Installation
 
-🛠️ Le site est **en construction**.
-Certaines sections sont encore en cours de développement ou d’adaptation responsive.
-
-Merci de votre **patience** 🙏
-
----
-
-## 🚀 Fonctionnalités
-
-- Structure responsive pensée *desktop → mobile*
-- Système de popups et navigation fluide
-- Formulaire de contact conforme RGPD (case à cocher obligatoire)
-- Loader accessible pendant le chargement de la page
-- Images optimisées via `loading="lazy"`
-
-## 🔨 Développement
-
-Le site ne nécessite pas de dépendances particulières.
-Pour tester localement :
+1. Clonez le dépôt puis installez les dépendances :
 
 ```bash
-# cloner le dépôt puis ouvrir index.html dans votre navigateur
+npm install
 ```
 
-## 🤝 Contact
+2. Copiez `.env.example` en `.env` et remplissez les variables :
 
-En cas de besoin : [valentinperies007@gmail.com](mailto:valentinperies007@gmail.com)
+```bash
+NETLIFY_DATABASE_URL_UNPOOLED="postgresql://neondb_owner:npg_4nwCJNUlgiV6@ep-winter-star-a57ner9y.us-east-2.aws.neon.tech/neondb?sslmode=require"
+ADMIN_PASSWORD="e73rfSQXsFLyf7Cf"
+```
+
+Ces variables sont également à définir dans le **dashboard Netlify** (onglet *Environment variables*).
+
+## Lancement en local
+
+```bash
+netlify dev
+```
+
+L'interface d'administration est accessible sur `/admin`.
+
+## Déploiement
+
+Poussez simplement vos changements sur GitHub. Netlify déclenchera automatiquement le build et le déploiement.
+
+## Mot de passe d'administration
+
+Le mot de passe unique à utiliser pour accéder à `/admin` est :
+
+```
+e73rfSQXsFLyf7Cf
+```
+
+Il est stocké dans la variable `ADMIN_PASSWORD` côté serveur.
+
+## Contact
+
+En cas de besoin : [valentinperies007@gmail.com](mailto:valentinperies007@gmail.com)
 
 ---
 

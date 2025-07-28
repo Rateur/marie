@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const images = document.querySelectorAll('#portfolio-carousel img');
+document.addEventListener('DOMContentLoaded', async () => {
+  const carousel = document.getElementById('portfolio-carousel');
   const leftBtn = document.querySelector('.carousel-arrow.left');
   const rightBtn = document.querySelector('.carousel-arrow.right');
   const popup = document.getElementById('portfolio-popup');
@@ -8,6 +8,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const popupDesc = document.getElementById('popup-description');
   const openPopup = document.getElementById('open-popup');
   const popupClose = popup.querySelector('.popup-close');
+
+  const res = await fetch('/api/portfolio');
+  const items = await res.json();
+  items.forEach(item => {
+    const img = document.createElement('img');
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.src = item.image_url;
+    img.alt = item.title;
+    img.dataset.title = item.title;
+    img.dataset.description = item.description;
+    carousel.appendChild(img);
+  });
+
+  const images = carousel.querySelectorAll('img');
+  if (!images.length) return;
 
   let current = 0;
 

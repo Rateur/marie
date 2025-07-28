@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <h1>Administration</h1>
+  <form id="login-form">
+    <input id="password" type="password" placeholder="Mot de passe" required>
+    <button type="submit">Se connecter</button>
+  </form>
+  <div id="admin-section" class="hidden">
+    <h2>Avis</h2>
+    <form id="avis-form">
+      <input id="avis-name" placeholder="Nom" required>
+      <textarea id="avis-content" placeholder="Avis" required></textarea>
+      <input id="avis-stars" type="number" min="1" max="5" value="5">
+      <button type="submit">Ajouter</button>
+    </form>
+    <ul id="avis-list"></ul>
+
+    <h2>Portfolio</h2>
+    <form id="portfolio-form">
+      <input id="portfolio-title" placeholder="Titre" required>
+      <textarea id="portfolio-description" placeholder="Description" required></textarea>
+      <input id="portfolio-image" placeholder="URL de l'image" required>
+      <button type="submit">Ajouter</button>
+    </form>
+    <ul id="portfolio-list"></ul>
+  </div>
+  <script src="js/admin.js"></script>
+</body>
+</html>
